@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/med5.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About</h1>
+            <span class="subheading">About the application</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Medi tracker is an application which is used by both doctors and patients. It’s very tough for some people to remember what medicine has to be taken at what time. So this makes our work easier. The main aim of this application is it acts like a health assistant. Not only does it assesses your health but also acts as a great tool when you visit the doctor. </p>
+        <p>The features are reminders of the medications, monitoring prescriptions given to the patients, fixing doctor’s appointment, keeping all your health records in one place including the doctor’s contact, details of your health insurance and also give a report of all your health activities. </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

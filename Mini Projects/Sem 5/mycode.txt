@@ -1,0 +1,93 @@
+#importing the library packages
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+% matplotlib inline
+from sklearn.linear_model import LogisticRegression
+from sklearn.externals import joblib
+
+#reading the dataset
+
+df = pd.read_csv ("Documents/diabetes.csv")
+
+#print the first 5 instances of the dataset 
+
+df.head ()
+
+#checking if there are any null values in the dataset
+
+print (df.isnull ().values.any ())
+
+#finding the correlation 
+
+df.corr ()
+
+#plotting the correlation as heatmap
+
+sns.heatmap (corr, 
+         xticklabels=corr.columns, 
+         yticklabels=corr.columns)
+
+#counting the number of diabetic and non-diabetic patients
+
+sns.countplot(y=df['Outcome'],palette='Set1')
+
+#splitting the dataset into train, test and check
+
+Train = df[:650]
+Test = df[650:750]
+Check = df[750:]
+
+#separating the label and features
+
+trainLabel = np.asarray(Train['Outcome'])
+trainData = np.asarray(Train.drop('Outcome',1))
+testLabel = np.asarray(Test['Outcome'])
+testData = np.asarray(Test.drop('Outcome',1))
+
+#normalizing the attributes
+
+means = np.mean(trainData, axis=0)
+stds = np.std(trainData, axis=0)
+trainData = (trainData - means)/stds
+testData = (testData - means)/stds
+
+
+#building a logistic regression model and training it
+
+diabetes = LogisticRegression()
+diabetes.fit(trainData, trainLabel)
+
+#finding accuracy
+
+accuracy = diabetes.score(testData, testLabel)
+print("accuracy = ", accuracy * 100, "%")
+
+#saving the model
+
+joblib.dump([diabetes, means, stds], 'diabeteseModel.pkl')
+
+#test data used to check accuracy of saved model
+
+diabetesLoadedModel, means, stds = joblib.load('diabeteseModel.pkl')
+accuracyModel = diabetesLoadedModel.score(testData, testLabel)
+print("accuracy = ",accuracyModel * 100,"%")
+
+print(Check.head())
+
+sampleData = Check[:1]
+# prepare sample
+
+sampleDataFeatures = np.asarray(sampleData.drop('Outcome',1))
+
+sampleDataFeatures = (sampleDataFeatures - means)/stds
+# predict
+
+predictionProbability = diabetesLoadedModel.predict_proba(sampleDataFeatures)
+prediction = diabetesLoadedModel.predict(sampleDataFeatures)
+print('Probability:', predictionProbability)
+print('prediction:', prediction)
+
+

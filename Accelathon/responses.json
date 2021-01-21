@@ -1,0 +1,7 @@
+{
+  "introduce": ["I'm your Agro Bot.","You can call me Agro ","I'm AB. How may I help you?","I'm your Agrobot, ready to give you solutions!"],
+  "greetings": ["Hi there!", "Hello!", "Hey!"],
+  "gratitude": ["You're welcome", "Anytime!", "Glad I could be of help"],
+  "basic_query_resp": ["Here are the details:"],
+  "order_resp": ["Order confirmed.", "Order placed.", "Done."]
+}

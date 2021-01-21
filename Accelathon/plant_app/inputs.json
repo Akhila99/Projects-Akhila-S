@@ -1,0 +1,55 @@
+{
+  "introduce": [
+    "what is your name?",
+    "who are you?",
+    "what can i call you?",
+    "your name?",
+    "what is your name",
+    "who are you",
+    "what can i call you",
+    "your name"
+  ],
+  "greetings": [
+    "hello",
+    "hey",
+    "heyy",
+    "hi",
+    "hii",
+    "hiii",
+    "hiiii",
+    "greetings",
+    "sup",
+    "what's up",
+    "yo"
+  ],
+  "gratitude": [
+    "thank you",
+    "thanks",
+    "thank you very much"
+  ],
+  "basic_query": [
+    "show me some weeds",
+    "i'd like to see some weeds",
+    "weeds available",
+    "infomation about weeds",
+    "spolution for all the weeds",
+    "what weeds do you have",
+    "show me the details of the black pigweed",
+    "what are the solutions for black pig weed",
+    "show me the details of wild oat",
+    "what are the solutions for wild oat",
+    "show me the details of the blue pimpernel",
+    "what are the solutions for blue pimpernel",
+    "show me the details of the little seed canarygrass",
+    "what are the solutions for little seed canarygrass",
+    "show me the details of the crowsfoot grass",
+    "what are the solutions for the crowsfoot grass",
+    "blue pimpernel",
+    "little seed canarygrass",
+    "crowsfoot grass",
+    "black pigweed",
+    "wild oat",
+    "weed"
+  ],
+  "order_request": ["book laptop","order laptop", "buy laptop", "add laptop to cart", "i'd like to order this laptop"]
+}
